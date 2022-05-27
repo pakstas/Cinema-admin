@@ -22,7 +22,12 @@ const Header = () => {
   return (
     <AppBar
       position="fixed"
-      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        background: "white",
+        color: "gray",
+        px: 2,
+      }}
     >
       <Toolbar>
         <IconButton

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import RouteLinks from "./Routes";
 import "normalize.css";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "@mui/material/styles";
 import { Theme } from "./styles/theme";
 import { AuthProvider } from "./contexts/AuthContext";
 

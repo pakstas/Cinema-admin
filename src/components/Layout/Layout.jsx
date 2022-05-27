@@ -6,10 +6,10 @@ import { Box } from "@mui/material";
 function Layout() {
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", background: "red" }}>
         <Header />
         <Sidebar />
-        <Main>
+        <Main sx={{ background: "red" }}>
           <Outlet />
         </Main>
       </Box>
