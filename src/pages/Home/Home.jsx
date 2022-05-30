@@ -79,13 +79,12 @@ function Home() {
 
   return (
     <>
-      <Grid container spacing={0} columns={12} sx={{ m: 0 }}>
-        <Grid item lg={6} md={12} sm={12} xs={12} sx={{ p: 1 }}>
-          <Grid container spacing={0} columns={6} sx={{ m: 0 }}>
-            <Grid item xs={6} sx={{ p: 1, pb: 2 }}>
+      <Grid container spacing={0} columns={12}>
+        <Grid item lg={6} md={12} sm={12} xs={12}>
+          <Grid container spacing={0} columns={6}>
+            <Grid item xs={6} sx={{ p: 2 }}>
               <Paper
                 sx={{
-                  m: 0,
                   p: 4,
                   boxShadow: theme.custom.shadows[0],
                   height: "200px",
@@ -108,11 +107,9 @@ function Home() {
                 <Button variant="contained">Contained</Button>
               </Paper>
             </Grid>
-            <Grid item md={3} sm={3} xs={6} sx={{ p: 1, pr: 2, pt: 2 }}>
+            <Grid item md={3} sm={3} xs={6} sx={{ p: 2 }}>
               <Paper
                 sx={{
-                  m: 0,
-                  p: 4,
                   boxShadow: theme.custom.shadows[0],
                   height: "200px",
                   boxSizing: "border-box",
@@ -121,11 +118,9 @@ function Home() {
                 xs-3
               </Paper>
             </Grid>
-            <Grid item md={3} sm={3} xs={6} sx={{ p: 1, pl: 2, pt: 2 }}>
+            <Grid item md={3} sm={3} xs={6} sx={{ p: 2 }}>
               <Paper
                 sx={{
-                  m: 0,
-                  p: 0,
                   boxShadow: theme.custom.shadows[0],
                   height: "200px",
                   boxSizing: "border-box",
@@ -141,8 +136,7 @@ function Home() {
           <Paper
             sx={{
               height: "432px",
-              m: 0,
-              p: 0,
+
               boxShadow: theme.custom.shadows[0],
               borderRadius: 4,
               display: "flex",
@@ -150,17 +144,13 @@ function Home() {
               alignContent: "space-between",
             }}
           >
-            {/* <div
-              style={{
-                height: "60px",
-                width: "100%",
-                padding: "32px",
-                boxSizing: "border-box",
-              }}
+            <Typography
+              variant="h5"
+              component="h4"
+              pt={4}
+              pl={4}
+              sx={{ width: "100%" }}
             >
-              Labas
-            </div> */}
-            <Typography variant="h5" component="h4" pt={4} pl={4}>
               Sales Chart
             </Typography>
             <ReactApexChart

@@ -1,15 +1,35 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header, Sidebar, Main } from "../index";
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 
 function Layout() {
+  const theme = useTheme();
+  const [isMobileSidebarOpen, setMobileSidebarOpen] = React.useState(false);
+
   return (
     <>
-      <Box sx={{ display: "flex", background: "red" }}>
-        <Header />
-        <Sidebar />
-        <Main sx={{ background: "red" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          minWidth: "100%",
+          minHeight: "100vh",
+          bgcolor: theme.palette.grey[50],
+        }}
+      >
+        <Header
+          toggleMobileSidebar={() =>
+            isMobileSidebarOpen
+              ? setMobileSidebarOpen(false)
+              : setMobileSidebarOpen(true)
+          }
+        />
+        <Sidebar
+          isMobileSidebarOpen={isMobileSidebarOpen}
+          onSidebarClose={() => setMobileSidebarOpen(false)}
+        />
+        <Main>
           <Outlet />
         </Main>
       </Box>

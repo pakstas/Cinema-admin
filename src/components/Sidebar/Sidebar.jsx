@@ -13,51 +13,99 @@ import DashboardLinks from "../../utils/DashboardLinks";
 
 const drawerWidth = "320px";
 
-function Sidebar() {
+function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
   const theme = useTheme();
   return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        display: { xs: "none", sm: "none", md: "block", lg: "block" },
-        width: drawerWidth,
-        flexShrink: 0,
-        [`& .MuiDrawer-paper`]: {
-          width: drawerWidth,
-          boxSizing: "border-box",
-          borderRight: 0,
-          bgcolor: theme.palette.grey[50],
-        },
-      }}
-    >
-      <Toolbar />
-      <Box
+    <>
+      <Drawer
+        variant="permanent"
         sx={{
-          overflow: "auto",
-          borderRadius: 4,
-          ml: 4,
-          mt: 4,
-          mb: 2,
-          mr: 2,
-          bgcolor: "white",
-          py: 1,
-          boxShadow: theme.custom.shadows[0],
+          display: { xs: "none", sm: "none", md: "none", lg: "block" },
+          width: drawerWidth,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: "border-box",
+            borderRight: 0,
+            bgcolor: theme.palette.grey[50],
+          },
         }}
       >
-        <List>
-          {DashboardLinks.map((item, index) => (
-            <ListItem key={index} sx={{ py: 0, px: 2 }}>
-              <ListItemButton href={item.path} sx={{ borderRadius: 2 }}>
-                <ListItemIcon sx={{ minWidth: "40px" }}>
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText primary={item.text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-    </Drawer>
+        <Toolbar />
+        <Box
+          sx={{
+            ml: 4,
+            mt: 4,
+            mr: 2,
+            overflow: "auto",
+            borderRadius: 4,
+            bgcolor: "white",
+            py: 1,
+            boxShadow: theme.custom.shadows[1],
+          }}
+        >
+          <List>
+            {DashboardLinks.map((item, index) => (
+              <ListItem key={index}>
+                <ListItemButton href={item.path} sx={{ borderRadius: 2 }}>
+                  <ListItemIcon sx={{ minWidth: "40px" }}>
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={item.text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+
+      {/* Mobile sidebar variant temporary starts here */}
+
+      <Drawer
+        anchor="left"
+        variant="temporary"
+        open={isMobileSidebarOpen}
+        onClose={onSidebarClose}
+        sx={{
+          display: { lg: "none" },
+          width: drawerWidth,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: "border-box",
+            borderRight: 0,
+            bgcolor: theme.palette.grey[50],
+          },
+        }}
+      >
+        <Toolbar />
+        <Box
+          sx={{
+            ml: 4,
+            mt: 4,
+            mr: 4,
+            overflow: "auto",
+            borderRadius: 4,
+            bgcolor: "white",
+            py: 1,
+            boxShadow: theme.custom.shadows[1],
+          }}
+        >
+          <List>
+            {DashboardLinks.map((item, index) => (
+              <ListItem key={index}>
+                <ListItemButton href={item.path} sx={{ borderRadius: 2 }}>
+                  <ListItemIcon sx={{ minWidth: "40px" }}>
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={item.text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+    </>
   );
 }
 

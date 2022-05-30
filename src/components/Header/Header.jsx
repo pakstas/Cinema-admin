@@ -8,7 +8,7 @@ import { Menu, MenuItem, Tooltip, Avatar } from "@mui/material";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Header = () => {
+const Header = ({ toggleMobileSidebar }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -26,16 +26,17 @@ const Header = () => {
         zIndex: (theme) => theme.zIndex.drawer + 1,
         background: "white",
         color: "gray",
-        px: 2,
+        width: "100%",
       }}
     >
-      <Toolbar>
+      <Toolbar sx={{ minHeight: 64, px: 3 }}>
         <IconButton
           size="large"
           edge="start"
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2 }}
+          onClick={toggleMobileSidebar}
         >
           <MenuIcon />
         </IconButton>
@@ -49,7 +50,7 @@ const Header = () => {
           </IconButton>
         </Tooltip>
         <Menu
-          sx={{ mt: "45px" }}
+          sx={{ mt: "56px" }}
           id="menu-appbar"
           anchorEl={anchorElUser}
           anchorOrigin={{

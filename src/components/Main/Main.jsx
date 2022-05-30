@@ -1,14 +1,10 @@
 import React from "react";
-import { Box, Toolbar, useTheme } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
 
 function Main({ children }) {
-  const theme = useTheme();
   return (
-    <Box
-      component="main"
-      sx={{ flexGrow: 1, py: 2, bgcolor: theme.palette.grey[50] }}
-    >
-      <Toolbar />
+    <Box sx={{ flexGrow: 1, maxWidth: "1400px", py: 2, pr: { lg: 2 } }}>
+      <Toolbar sx={{ minHeight: 64 }} />
       {children}
     </Box>
   );
