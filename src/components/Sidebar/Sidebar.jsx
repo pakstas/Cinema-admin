@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -15,6 +16,7 @@ const drawerWidth = "320px";
 
 function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
   const theme = useTheme();
+  const location = useLocation();
   return (
     <>
       <Drawer
@@ -47,7 +49,11 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
           <List>
             {DashboardLinks.map((item, index) => (
               <ListItem key={index}>
-                <ListItemButton href={item.path} sx={{ borderRadius: 2 }}>
+                <ListItemButton
+                  selected={location.pathname === item.path ? true : false}
+                  href={item.path}
+                  sx={{ borderRadius: 2 }}
+                >
                   <ListItemIcon sx={{ minWidth: "40px" }}>
                     {item.icon}
                   </ListItemIcon>
@@ -94,7 +100,11 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
           <List>
             {DashboardLinks.map((item, index) => (
               <ListItem key={index}>
-                <ListItemButton href={item.path} sx={{ borderRadius: 2 }}>
+                <ListItemButton
+                  selected={location.pathname === item.path ? true : false}
+                  href={item.path}
+                  sx={{ borderRadius: 2 }}
+                >
                   <ListItemIcon sx={{ minWidth: "40px" }}>
                     {item.icon}
                   </ListItemIcon>

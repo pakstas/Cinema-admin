@@ -157,13 +157,13 @@ function Home() {
               options={options}
               series={series}
               type="area"
-              width="100%"
               height="350px"
               style={{
                 padding: 0,
                 margin: 0,
                 borderRadius: "16px",
                 overflow: "hidden",
+                width: "100%",
               }}
             />
           </Paper>

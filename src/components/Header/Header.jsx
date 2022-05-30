@@ -27,15 +27,18 @@ const Header = ({ toggleMobileSidebar }) => {
         background: "white",
         color: "gray",
         width: "100%",
+        boxShadow: (theme) => theme.custom.shadows[0],
+        px: { lg: 2 },
+        [`.MuiToolbar-root`]: { px: 2 },
       }}
     >
-      <Toolbar sx={{ minHeight: 64, px: 3 }}>
+      <Toolbar sx={{ minHeight: 64 }}>
         <IconButton
           size="large"
           edge="start"
           color="inherit"
           aria-label="menu"
-          sx={{ mr: 2 }}
+          sx={{ mr: 2, display: { lg: "none" } }}
           onClick={toggleMobileSidebar}
         >
           <MenuIcon />
