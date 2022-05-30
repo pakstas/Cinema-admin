@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Grid, Paper, useTheme, Typography } from "@mui/material";
 import ReactApexChart from "react-apexcharts";
+import bglogo from "../../assets/img/girl_with_tablet.png";
 
 function Home() {
   const theme = useTheme();
@@ -90,10 +91,10 @@ function Home() {
                   height: "200px",
                   boxSizing: "border-box",
                   borderRadius: 4,
-                  background:
-                    "url(" +
-                    "https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/stylish/static/media/welcome-bg2-2x-svg.97ed12dc.svg" +
-                    ") no-repeat scroll 100% 0% / 45%",
+                  background: "url(" + bglogo + ")",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "45%",
+                  backgroundPosition: "100% 0%",
                 }}
               >
                 <Typography variant="h5" component="h4">
@@ -174,7 +175,7 @@ function Home() {
         Welcome to your React boilerplate. We hope that this will bring you up
         to speed with your development.
       </div>
-      <div></div>
+
       <section>
         <Button variant="contained" onClick={() => alert("hohoho")}>
           Check React Now

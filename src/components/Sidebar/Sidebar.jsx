@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -48,13 +48,30 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
         >
           <List>
             {DashboardLinks.map((item, index) => (
-              <ListItem key={index}>
+              <ListItem
+                key={index}
+                sx={{
+                  py: 0.5,
+                }}
+              >
                 <ListItemButton
+                  component={Link}
+                  to={item.path}
                   selected={location.pathname === item.path ? true : false}
-                  href={item.path}
-                  sx={{ borderRadius: 2 }}
+                  sx={{
+                    ...(location.pathname === item.path && {
+                      color: "white",
+                      bgcolor: "grey !important",
+                    }),
+                    borderRadius: 2,
+                  }}
                 >
-                  <ListItemIcon sx={{ minWidth: "40px" }}>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: "40px",
+                      color: location.pathname === item.path ? "white" : "",
+                    }}
+                  >
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.text} />
@@ -101,8 +118,9 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
             {DashboardLinks.map((item, index) => (
               <ListItem key={index}>
                 <ListItemButton
+                  component={Link}
                   selected={location.pathname === item.path ? true : false}
-                  href={item.path}
+                  to={item.path}
                   sx={{ borderRadius: 2 }}
                 >
                   <ListItemIcon sx={{ minWidth: "40px" }}>
