@@ -41,16 +41,16 @@ function Home() {
                 }}
               >
                 <Box sx={{ width: "100%" }}>
-                  <Typography variant="h5" component="h4">
-                    Welcome Lui,
-                  </Typography>
+                  <Typography variant="h3">Welcome Lui,</Typography>
 
-                  <Typography variant="h5" component="h4" mb={3}>
+                  <Typography variant="h3" mb={3}>
                     Download Latest Report
                   </Typography>
                 </Box>
 
-                <Button variant="contained">Download</Button>
+                <Button variant="contained" color="primary">
+                  Download
+                </Button>
               </Paper>
             </Grid>
 
@@ -62,7 +62,7 @@ function Home() {
                   height: "200px",
                   boxSizing: "border-box",
                   borderRadius: 4,
-                  bgcolor: theme.palette.info.light,
+                  bgcolor: theme.palette.secondary.main,
                   display: "flex",
                   flexWrap: "wrap",
                   alignContent: "space-between",
@@ -76,25 +76,23 @@ function Home() {
                     width: "100%",
                   }}
                 >
-                  <Typography
-                    variant="h5"
-                    component="h4"
-                    color="primary.contrastText"
-                  >
+                  <Typography variant="h3" color="primary.contrastText">
                     Earnings
                   </Typography>
                   <IconButton
                     size="large"
                     sx={{
-                      bgcolor: theme.palette.grey[200],
-                      "&:hover": { bgcolor: theme.palette.grey[100] },
+                      bgcolor: theme.palette.primary.main,
+                      "&:hover": { bgcolor: theme.palette.primary.dark },
                     }}
                   >
-                    <EuroOutlinedIcon sx={{ color: "black" }} />
+                    <EuroOutlinedIcon
+                      sx={{ color: theme.palette.primary.contrastText }}
+                    />
                   </IconButton>
                 </Box>
                 <Typography
-                  variant="h4"
+                  variant="h1"
                   color="primary.contrastText"
                   mt={2}
                   sx={{ width: "100%" }}
@@ -134,16 +132,16 @@ function Home() {
                   }}
                 >
                   <Box>
-                    <Typography variant="subtitle1" sx={{ opacity: 0.75 }}>
+                    <Typography variant="h5" sx={{ opacity: 0.75 }}>
                       Monthly Sales
                     </Typography>
-                    <Typography variant="h5">4,352</Typography>
+                    <Typography variant="h2">4,352</Typography>
                   </Box>
                   <Box>
                     <IconButton
                       size="large"
                       sx={{
-                        bgcolor: theme.palette.secondary.light,
+                        bgcolor: theme.palette.secondary.main,
                         "&:hover": { bgcolor: theme.palette.secondary.dark },
                       }}
                     >
@@ -185,7 +183,7 @@ function Home() {
               alignContent: "space-between",
             }}
           >
-            <Typography variant="h5" component="h4" sx={{ width: "100%" }}>
+            <Typography variant="h3" sx={{ width: "100%" }}>
               Sales Overview
             </Typography>
             <ReactApexChart
@@ -201,14 +199,14 @@ function Home() {
         </Grid>
       </Grid>
 
-      {/* <div>
+      <div>
         <ReactApexChart
           options={ChartsData.radialchart.options}
           series={ChartsData.radialchart.series}
           type="radialBar"
           height={350}
         />
-      </div> */}
+      </div>
 
       <section>
         <Button variant="contained" onClick={() => alert("hohoho")}>
