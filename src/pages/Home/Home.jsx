@@ -1,92 +1,32 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import { Grid, Paper, useTheme, Typography } from "@mui/material";
+import {
+  Grid,
+  Paper,
+  useTheme,
+  Typography,
+  Box,
+  IconButton,
+} from "@mui/material";
+import EuroOutlinedIcon from "@mui/icons-material/EuroOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import ReactApexChart from "react-apexcharts";
 import bglogo from "../../assets/img/girl_with_tablet.png";
+import ChartsData from "../../utils/ChartsData";
 
 function Home() {
   const theme = useTheme();
-  const series = [
-    {
-      name: "Room #1",
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-    {
-      name: "Room #2",
-      data: [11, 32, 45, 32, 34, 52, 41],
-    },
-  ];
-
-  const options = {
-    grid: {
-      show: false,
-    },
-    chart: {
-      sparkline: {
-        enabled: true,
-      },
-      stacked: false,
-      toolbar: {
-        show: false,
-      },
-      height: 350,
-      width: "100%",
-      type: "area",
-    },
-    dataLabels: {
-      enabled: false,
-      background: {
-        padding: 0,
-      },
-      offsetX: 0,
-      offsetY: 0,
-    },
-    stroke: {
-      curve: "smooth",
-    },
-    xaxis: {
-      labels: {
-        show: false,
-      },
-      axisTicks: { show: false },
-      axisBorder: { show: false },
-      type: "datetime",
-      categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
-      ],
-      tooltip: {
-        enabled: false,
-      },
-    },
-    yaxis: {
-      labels: {
-        show: false,
-      },
-    },
-    tooltip: {
-      enabled: true,
-      x: {
-        show: true,
-        format: "dd/MM/yy HH:mm",
-      },
-    },
-  };
 
   return (
     <>
       <Grid container spacing={0} columns={12}>
+        {/* First Column */}
         <Grid item lg={6} md={12} sm={12} xs={12}>
           <Grid container spacing={0} columns={6}>
             <Grid item xs={6} sx={{ p: 2 }}>
               <Paper
                 sx={{
-                  p: 4,
+                  p: 3,
                   boxShadow: theme.custom.shadows[0],
                   height: "200px",
                   boxSizing: "border-box",
@@ -95,75 +35,165 @@ function Home() {
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "45%",
                   backgroundPosition: "100% 0%",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignContent: "space-between",
                 }}
               >
-                <Typography variant="h5" component="h4">
-                  Welcome Lui,
-                </Typography>
+                <Box sx={{ width: "100%" }}>
+                  <Typography variant="h5" component="h4">
+                    Welcome Lui,
+                  </Typography>
 
-                <Typography variant="h5" component="h4" mb={3}>
-                  Download Latest Report
-                </Typography>
+                  <Typography variant="h5" component="h4" mb={3}>
+                    Download Latest Report
+                  </Typography>
+                </Box>
 
-                <Button variant="contained">Contained</Button>
+                <Button variant="contained">Download</Button>
               </Paper>
             </Grid>
+
+            <Grid item md={3} sm={3} xs={6} sx={{ p: 2 }}>
+              <Paper
+                sx={{
+                  p: 3,
+                  boxShadow: theme.custom.shadows[0],
+                  height: "200px",
+                  boxSizing: "border-box",
+                  borderRadius: 4,
+                  bgcolor: theme.palette.info.light,
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignContent: "space-between",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "no-wrap",
+                    justifyContent: "space-between",
+                    width: "100%",
+                  }}
+                >
+                  <Typography
+                    variant="h5"
+                    component="h4"
+                    color="primary.contrastText"
+                  >
+                    Earnings
+                  </Typography>
+                  <IconButton
+                    size="large"
+                    sx={{
+                      bgcolor: theme.palette.grey[200],
+                      "&:hover": { bgcolor: theme.palette.grey[100] },
+                    }}
+                  >
+                    <EuroOutlinedIcon sx={{ color: "black" }} />
+                  </IconButton>
+                </Box>
+                <Typography
+                  variant="h4"
+                  color="primary.contrastText"
+                  mt={2}
+                  sx={{ width: "100%" }}
+                >
+                  &euro; 92,458.88
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  color="primary.contrastText"
+                  sx={{ opacity: 0.75 }}
+                >
+                  Monthly Revenue
+                </Typography>
+              </Paper>
+            </Grid>
+
             <Grid item md={3} sm={3} xs={6} sx={{ p: 2 }}>
               <Paper
                 sx={{
                   boxShadow: theme.custom.shadows[0],
                   height: "200px",
                   boxSizing: "border-box",
+                  borderRadius: 4,
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignContent: "space-between",
                 }}
               >
-                xs-3
-              </Paper>
-            </Grid>
-            <Grid item md={3} sm={3} xs={6} sx={{ p: 2 }}>
-              <Paper
-                sx={{
-                  boxShadow: theme.custom.shadows[0],
-                  height: "200px",
-                  boxSizing: "border-box",
-                }}
-              >
-                xs-3
+                <Box
+                  sx={{
+                    pl: 3,
+                    pt: 3,
+                    pr: 3,
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                  }}
+                >
+                  <Box>
+                    <Typography variant="subtitle1" sx={{ opacity: 0.75 }}>
+                      Monthly Sales
+                    </Typography>
+                    <Typography variant="h5">4,352</Typography>
+                  </Box>
+                  <Box>
+                    <IconButton
+                      size="large"
+                      sx={{
+                        bgcolor: theme.palette.secondary.light,
+                        "&:hover": { bgcolor: theme.palette.secondary.dark },
+                      }}
+                    >
+                      <ShoppingBagOutlinedIcon
+                        sx={{ color: theme.palette.primary.contrastText }}
+                      />
+                    </IconButton>
+                  </Box>
+                </Box>
+                <ReactApexChart
+                  options={ChartsData.areachart.options}
+                  series={ChartsData.areachart.series}
+                  type="area"
+                  height="50%"
+                  style={{
+                    padding: 0,
+                    margin: 0,
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    width: "100%",
+                  }}
+                />
               </Paper>
             </Grid>
           </Grid>
         </Grid>
 
+        {/* Second Column */}
         <Grid item lg={6} md={12} sm={12} xs={12} sx={{ p: 2 }}>
           <Paper
             sx={{
+              p: 3,
               height: "432px",
-
               boxShadow: theme.custom.shadows[0],
               borderRadius: 4,
+              boxSizing: "border-box",
               display: "flex",
               flexWrap: "wrap",
               alignContent: "space-between",
             }}
           >
-            <Typography
-              variant="h5"
-              component="h4"
-              pt={4}
-              pl={4}
-              sx={{ width: "100%" }}
-            >
-              Sales Chart
+            <Typography variant="h5" component="h4" sx={{ width: "100%" }}>
+              Sales Overview
             </Typography>
             <ReactApexChart
-              options={options}
-              series={series}
-              type="area"
+              options={ChartsData.barchart.options}
+              series={ChartsData.barchart.series}
+              type="bar"
               height="350px"
               style={{
-                padding: 0,
-                margin: 0,
-                borderRadius: "16px",
-                overflow: "hidden",
                 width: "100%",
               }}
             />
@@ -171,10 +201,14 @@ function Home() {
         </Grid>
       </Grid>
 
-      <div>
-        Welcome to your React boilerplate. We hope that this will bring you up
-        to speed with your development.
-      </div>
+      {/* <div>
+        <ReactApexChart
+          options={ChartsData.radialchart.options}
+          series={ChartsData.radialchart.series}
+          type="radialBar"
+          height={350}
+        />
+      </div> */}
 
       <section>
         <Button variant="contained" onClick={() => alert("hohoho")}>

@@ -1,40 +1,40 @@
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import MovieIcon from "@mui/icons-material/Movie";
-import WeekendIcon from "@mui/icons-material/Weekend";
-import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
-import GroupIcon from "@mui/icons-material/Group";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import MovieOutlinedIcon from "@mui/icons-material/MovieOutlined";
+import WeekendOutlinedIcon from "@mui/icons-material/WeekendOutlined";
+import ConfirmationNumberOutlinedIcon from "@mui/icons-material/ConfirmationNumberOutlined";
+import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 
 const DashboardLinks = [
   {
     text: "Home",
     path: "/",
-    icon: <DashboardIcon />,
+    icon: <DashboardOutlinedIcon />,
   },
   {
     text: "Movies",
     path: "/movies",
-    icon: <MovieIcon />,
+    icon: <MovieOutlinedIcon />,
   },
   {
     text: "Cinema",
     path: "/cinema",
-    icon: <WeekendIcon />,
+    icon: <WeekendOutlinedIcon />,
   },
   {
     text: "Tickets",
     path: "/tickets",
-    icon: <ConfirmationNumberIcon />,
+    icon: <ConfirmationNumberOutlinedIcon />,
   },
   {
     text: "Users",
     path: "/users",
-    icon: <GroupIcon />,
+    icon: <GroupOutlinedIcon />,
   },
   {
     text: "Showtimes",
     path: "/showtimes",
-    icon: <CalendarMonthIcon />,
+    icon: <CalendarMonthOutlinedIcon />,
   },
 ];
 
