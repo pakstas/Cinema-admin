@@ -4,11 +4,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Menu, MenuItem, Tooltip, Avatar } from "@mui/material";
+import { useTheme, Menu, MenuItem, Tooltip, Avatar } from "@mui/material";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = ({ toggleMobileSidebar }) => {
+  const theme = useTheme();
+
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -23,11 +25,10 @@ const Header = ({ toggleMobileSidebar }) => {
     <AppBar
       position="fixed"
       sx={{
-        zIndex: (theme) => theme.zIndex.drawer + 1,
-        background: "white",
-        color: "gray",
+        zIndex: theme.zIndex.drawer + 1,
+        backgroundImage: theme.custom.gradients[0],
         width: "100%",
-        boxShadow: (theme) => theme.custom.shadows[0],
+        boxShadow: theme.custom.shadows[0],
         px: { lg: 2 },
         [`.MuiToolbar-root`]: { px: 2 },
       }}
@@ -35,7 +36,6 @@ const Header = ({ toggleMobileSidebar }) => {
       <Toolbar sx={{ minHeight: 64 }}>
         <IconButton
           size="large"
-          edge="start"
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2, display: { lg: "none" } }}
@@ -43,7 +43,7 @@ const Header = ({ toggleMobileSidebar }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}>
           Dashboard
         </Typography>
 
