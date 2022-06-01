@@ -148,13 +148,13 @@ const ChartsData = {
         axisBorder: { show: false },
         type: "datetime",
         categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z",
+          "2022-06-01",
+          "2022-06-02",
+          "2022-06-03",
+          "2022-06-04",
+          "2022-06-05",
+          "2022-06-06",
+          "2022-06-07",
         ],
         tooltip: {
           enabled: false,
@@ -167,9 +167,10 @@ const ChartsData = {
       },
       tooltip: {
         enabled: true,
+        theme: "dark",
         x: {
           show: true,
-          format: "dd/MM/yy HH:mm",
+          format: "dd/MM/yy",
         },
       },
     },
@@ -206,7 +207,7 @@ const ChartsData = {
           show: false,
         },
         foreColor: "#adb0bb",
-        fontFamily: "'DM Sans',sans-serif",
+        fontFamily: "'Roboto',sans-serif",
         sparkline: {
           enabled: false,
         },
@@ -242,17 +243,17 @@ const ChartsData = {
     },
     series: [
       {
-        name: "Ample Admin",
+        name: "The Godfather",
         data: [355, 390, 300, 350, 390, 180],
       },
       {
-        name: "Pixel Admin",
+        name: "The Dark Knight",
         data: [280, 250, 325, 215, 250, 310],
       },
     ],
   },
   radialchart: {
-    series: [44, 55, 67, 83],
+    series: [82, 72, 65, 51, 37],
     options: {
       colors: ChartsColorPalette(),
       chart: {
@@ -270,16 +271,18 @@ const ChartsData = {
             },
             total: {
               show: true,
-              label: "Total",
-              formatter: function (w) {
-                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                return 249;
-              },
+              label: "Average",
             },
           },
         },
       },
-      labels: ["Apples", "Oranges", "Bananas", "Berries"],
+      labels: [
+        "The Godfather",
+        "The Dark Knight",
+        "Joker",
+        "Avengers: Infinity War",
+        "Other",
+      ],
     },
   },
 };

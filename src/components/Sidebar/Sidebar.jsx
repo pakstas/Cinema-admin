@@ -64,9 +64,6 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
                       bgcolor: theme.palette.primary.main + "!important",
                     }),
                     borderRadius: 2,
-                    // "&:hover": {
-                    //   bgcolor: theme.palette.primary.light,
-                    // },
                   }}
                 >
                   <ListItemIcon
@@ -105,7 +102,7 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
           },
         }}
       >
-        <Toolbar />
+        <Toolbar sx={{ minHeight: "64px" }} />
 
         <List>
           {DashboardLinks.map((item, index) => (
@@ -120,15 +117,12 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
                     bgcolor: theme.palette.primary.main + "!important",
                   }),
                   borderRadius: 2,
-                  // "&:hover": {
-                  //   bgcolor: theme.palette.primary.light,
-                  // },
                 }}
               >
                 <ListItemIcon
                   sx={{
                     minWidth: "40px",
-                    color: location.pathname === item.path ? "white" : "",
+                    color: location.pathname === item.path ? "white" : "black",
                   }}
                 >
                   {item.icon}
