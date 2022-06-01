@@ -55,7 +55,7 @@ export const Theme = createTheme({
       "rgba(90, 114, 123, 0.11) 0px 7px 15px 0px;",
       "rgba(90, 114, 123, 0.11) 0px 7px 15px 0px;",
     ],
-    gradients: ["linear-gradient(to right, #776bcd, #ffb400)"],
+    gradients: ["linear-gradient(to right, #776bcd, #AB9AFF)"],
   },
   components: {
     MuiButton: {

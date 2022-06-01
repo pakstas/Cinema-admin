@@ -9,32 +9,32 @@ const DashboardLinks = [
   {
     text: "Home",
     path: "/",
-    icon: <DashboardOutlinedIcon />,
+    icon: <DashboardOutlinedIcon fontSize="small" />,
   },
   {
     text: "Movies",
     path: "/movies",
-    icon: <MovieOutlinedIcon />,
+    icon: <MovieOutlinedIcon fontSize="small" />,
   },
   {
     text: "Cinema",
     path: "/cinema",
-    icon: <WeekendOutlinedIcon />,
+    icon: <WeekendOutlinedIcon fontSize="small" />,
   },
   {
     text: "Tickets",
     path: "/tickets",
-    icon: <ConfirmationNumberOutlinedIcon />,
+    icon: <ConfirmationNumberOutlinedIcon fontSize="small" />,
   },
   {
     text: "Users",
     path: "/users",
-    icon: <GroupOutlinedIcon />,
+    icon: <GroupOutlinedIcon fontSize="small" />,
   },
   {
     text: "Showtimes",
     path: "/showtimes",
-    icon: <CalendarMonthOutlinedIcon />,
+    icon: <CalendarMonthOutlinedIcon fontSize="small" />,
   },
 ];
 

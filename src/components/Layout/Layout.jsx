@@ -15,7 +15,7 @@ function Layout() {
           justifyContent: "center",
           minWidth: "100%",
           minHeight: "100vh",
-          bgcolor: theme.palette.grey[50],
+          bgcolor: theme.palette.grey[100],
         }}
       >
         <Header

@@ -12,7 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import DashboardLinks from "../../utils/DashboardLinks";
 
-const drawerWidth = "320px";
+const drawerWidth = "300px";
 
 function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
   const theme = useTheme();
@@ -29,7 +29,7 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
             width: drawerWidth,
             boxSizing: "border-box",
             borderRight: 0,
-            bgcolor: theme.palette.grey[50],
+            bgcolor: theme.palette.grey[100],
           },
         }}
       >
@@ -41,7 +41,7 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
             mr: 2,
             overflow: "auto",
             borderRadius: 4,
-            bgcolor: "white",
+            bgcolor: theme.palette.background.default,
             py: 1,
             boxShadow: theme.custom.shadows[1],
           }}
@@ -61,15 +61,19 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
                   sx={{
                     ...(location.pathname === item.path && {
                       color: "white",
-                      bgcolor: "grey !important",
+                      bgcolor: theme.palette.primary.main + "!important",
                     }),
                     borderRadius: 2,
+                    // "&:hover": {
+                    //   bgcolor: theme.palette.primary.light,
+                    // },
                   }}
                 >
                   <ListItemIcon
                     sx={{
                       minWidth: "40px",
-                      color: location.pathname === item.path ? "white" : "",
+                      color:
+                        location.pathname === item.path ? "white" : "black",
                     }}
                   >
                     {item.icon}
@@ -91,47 +95,49 @@ function Sidebar({ isMobileSidebarOpen, onSidebarClose }) {
         onClose={onSidebarClose}
         sx={{
           display: { lg: "none" },
-          width: drawerWidth,
+          width: "240px",
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
+            width: "240px",
             boxSizing: "border-box",
             borderRight: 0,
-            bgcolor: theme.palette.grey[50],
+            bgcolor: theme.palette.grey[100],
           },
         }}
       >
         <Toolbar />
-        <Box
-          sx={{
-            ml: 4,
-            mt: 4,
-            mr: 4,
-            overflow: "auto",
-            borderRadius: 4,
-            bgcolor: "white",
-            py: 1,
-            boxShadow: theme.custom.shadows[1],
-          }}
-        >
-          <List>
-            {DashboardLinks.map((item, index) => (
-              <ListItem key={index}>
-                <ListItemButton
-                  component={Link}
-                  selected={location.pathname === item.path ? true : false}
-                  to={item.path}
-                  sx={{ borderRadius: 2 }}
+
+        <List>
+          {DashboardLinks.map((item, index) => (
+            <ListItem key={index}>
+              <ListItemButton
+                component={Link}
+                to={item.path}
+                selected={location.pathname === item.path ? true : false}
+                sx={{
+                  ...(location.pathname === item.path && {
+                    color: "white",
+                    bgcolor: theme.palette.primary.main + "!important",
+                  }),
+                  borderRadius: 2,
+                  // "&:hover": {
+                  //   bgcolor: theme.palette.primary.light,
+                  // },
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: "40px",
+                    color: location.pathname === item.path ? "white" : "",
+                  }}
                 >
-                  <ListItemIcon sx={{ minWidth: "40px" }}>
-                    {item.icon}
-                  </ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
       </Drawer>
     </>
   );

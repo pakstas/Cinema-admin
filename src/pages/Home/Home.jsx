@@ -11,7 +11,8 @@ import {
 import EuroOutlinedIcon from "@mui/icons-material/EuroOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import ReactApexChart from "react-apexcharts";
-import bglogo from "../../assets/img/girl_with_tablet.png";
+// import bglogo from "../../assets/img/girl_with_tablet.png";
+import bglogo from "../../assets/img/1200.jpg";
 import ChartsData from "../../utils/ChartsData";
 
 function Home() {
@@ -31,16 +32,17 @@ function Home() {
                   height: "200px",
                   boxSizing: "border-box",
                   borderRadius: 4,
-                  background: "url(" + bglogo + ")",
+                  background: "rgb(239,239,239)",
+                  backgroundImage: "url(" + bglogo + ")",
                   backgroundRepeat: "no-repeat",
-                  backgroundSize: "45%",
-                  backgroundPosition: "100% 0%",
+                  backgroundSize: "auto 130%",
+                  backgroundPosition: { sm: "100% 0%", xs: "200% -10%" },
                   display: "flex",
                   flexWrap: "wrap",
                   alignContent: "space-between",
                 }}
               >
-                <Box sx={{ width: "100%" }}>
+                <Box variant="outlined" sx={{ width: "100%" }}>
                   <Typography variant="h3">Welcome Lui,</Typography>
 
                   <Typography variant="h3" mb={3}>
@@ -199,20 +201,49 @@ function Home() {
         </Grid>
       </Grid>
 
-      <div>
-        <ReactApexChart
-          options={ChartsData.radialchart.options}
-          series={ChartsData.radialchart.series}
-          type="radialBar"
-          height={350}
-        />
-      </div>
+      <Grid container spacing={0} columns={12}>
+        <Grid item lg={4} md={12} sm={12} xs={12} sx={{ p: 2 }}>
+          <Paper
+            sx={{
+              p: 3,
+              boxShadow: theme.custom.shadows[0],
+              height: "400px",
+              boxSizing: "border-box",
+              borderRadius: 4,
 
-      <section>
-        <Button variant="contained" onClick={() => alert("hohoho")}>
-          Check React Now
-        </Button>
-      </section>
+              display: "flex",
+              flexWrap: "wrap",
+              alignContent: "space-between",
+            }}
+          >
+            <ReactApexChart
+              options={ChartsData.radialchart.options}
+              series={ChartsData.radialchart.series}
+              type="radialBar"
+              height={350}
+            />
+          </Paper>
+        </Grid>
+        <Grid item lg={8} md={12} sm={12} xs={12} sx={{ p: 2 }}>
+          <Paper
+            sx={{
+              p: 3,
+              boxShadow: theme.custom.shadows[0],
+              height: "400px",
+              boxSizing: "border-box",
+              borderRadius: 4,
+
+              display: "flex",
+              flexWrap: "wrap",
+              alignContent: "space-between",
+            }}
+          >
+            <Button variant="contained" onClick={() => alert("hohoho")}>
+              Check React Now
+            </Button>
+          </Paper>
+        </Grid>
+      </Grid>
     </>
   );
 }
