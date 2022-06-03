@@ -2,10 +2,14 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components";
 
-const HomeLazy = lazy(() => import("./pages/Home/Home"));
-const LoginLazy = lazy(() => import("./pages/Login/Login"));
-const AboutLazy = lazy(() => import("./pages/About/About"));
-const MoviesLazy = lazy(() => import("./pages/Movies/Movies"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const About = lazy(() => import("./pages/About/About"));
+const Movies = lazy(() => import("./pages/Movies/Movies"));
+const Cinema = lazy(() => import("./pages/Cinema/Cinema"));
+const Showtimes = lazy(() => import("./pages/Showtimes/Showtimes"));
+const Tickets = lazy(() => import("./pages/Tickets/Tickets"));
+const Users = lazy(() => import("./pages/Users/Users"));
 
 function RouteLinks() {
   return (
@@ -18,7 +22,7 @@ function RouteLinks() {
               index
               element={
                 <Suspense fallback={<div>Loading...</div>}>
-                  <HomeLazy />
+                  <Home />
                 </Suspense>
               }
             />
@@ -26,7 +30,7 @@ function RouteLinks() {
               path="/about"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
-                  <AboutLazy />
+                  <About />
                 </Suspense>
               }
             />
@@ -34,13 +38,45 @@ function RouteLinks() {
               path="/movies"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
-                  <MoviesLazy />
+                  <Movies />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/cinema"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Cinema />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/tickets"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Tickets />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/users"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Users />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/showtimes"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Showtimes />
                 </Suspense>
               }
             />
           </Route>
 
-          <Route path="/login" element={<LoginLazy />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
