@@ -20,7 +20,7 @@ function Main({ children }) {
           textAlign="center"
           sx={{ width: "100%", opacity: 0.5, p: 2, boxSizing: "border-box" }}
         >
-          © 2021 All rights reserved by pakstas.com
+          © 2022 All rights reserved by pakstas.com
         </Typography>
       </Box>
     </Box>
