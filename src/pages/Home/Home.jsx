@@ -21,7 +21,7 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import ReactApexChart from "react-apexcharts";
 import bglogo from "../../assets/img/1200.jpg";
 import ChartsData from "../../utils/ChartsData";
-import ticketsalesdata from "../../utils/TablesData";
+import TablesData from "../../utils/TablesData";
 
 function Home() {
   const theme = useTheme();
@@ -298,7 +298,7 @@ function Home() {
                 </TableHead>
 
                 <TableBody>
-                  {ticketsalesdata.map((row) => (
+                  {TablesData.rows.ticketSalesData.map((row) => (
                     <TableRow
                       key={row.name}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}

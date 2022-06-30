@@ -1,13 +1,97 @@
-function createData(name, genre, year, duration, watched) {
-  return { name, genre, year, duration, watched };
-}
-
-const ticketsalesdata = [
-  createData("The Godfather", "Crime", 1972, 175, 452),
-  createData("The Dark Knight", "Action", 2008, 152, 378),
-  createData("Joker", "Drama", 2019, 122, 318),
-  createData("avengers: infinity war", "action", 2018, 149, 269),
-  createData("gladiator", "drama", 2000, 155, 257),
+const ticketsSalesData = [
+  {
+    name: "The Godfather",
+    genre: "Crime",
+    year: 1972,
+    duration: 175,
+    watched: 452,
+  },
+  {
+    name: "The Dark Knight",
+    genre: "Action",
+    year: 2008,
+    duration: 152,
+    watched: 378,
+  },
+  {
+    name: "Joker",
+    genre: "Drama",
+    year: 2019,
+    duration: 122,
+    watched: 318,
+  },
+  {
+    name: "avengers: infinity war",
+    genre: "action",
+    year: 2018,
+    duration: 149,
+    watched: 269,
+  },
+  {
+    name: "gladiator",
+    genre: "drama",
+    year: 2000,
+    duration: 155,
+    watched: 257,
+  },
 ];
 
-export default ticketsalesdata;
+const moviesTableColumns = [
+  { id: "id", numeric: true, disablePadding: true, label: "ID" },
+  { id: "title", label: "Title", numeric: false, disablePadding: false },
+  {
+    id: "cover_img",
+    label: "Cover Image",
+    numeric: false,
+    disablePadding: false,
+  },
+  {
+    id: "poster_img",
+    label: "Poster Image",
+    numeric: false,
+    disablePadding: false,
+  },
+  {
+    id: "director",
+    label: "Director",
+    numeric: false,
+    disablePadding: false,
+  },
+
+  {
+    id: "genre",
+    label: "Genre",
+    numeric: false,
+    disablePadding: false,
+  },
+  {
+    id: "movie_length",
+    label: "Length",
+    numeric: true,
+    disablePadding: false,
+  },
+  {
+    id: "year",
+    label: "Year",
+    type: "number",
+    numeric: true,
+    disablePadding: false,
+  },
+  {
+    id: "description",
+    label: "Description",
+    numeric: false,
+    disablePadding: false,
+  },
+];
+
+const TablesData = {
+  rows: {
+    ticketSalesData: ticketsSalesData,
+  },
+  columns: {
+    moviesTable: moviesTableColumns,
+  },
+};
+
+export default TablesData;
